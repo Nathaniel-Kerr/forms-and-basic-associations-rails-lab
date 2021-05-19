@@ -10,4 +10,12 @@ class Song < ActiveRecord::Base
   def artist_name
     self.artist ? self.artist.name : nil 
   end
+
+  def note_contents
+    content = []
+    self.notes.each do |note|
+      content << note.content
+    end
+    content
+  end
 end
